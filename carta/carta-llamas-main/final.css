@@ -1,0 +1,14 @@
+body {
+  background: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+img {
+  max-width: 100vw;
+  max-height: 100vh;
+  image-rendering: pixelated; /* o 'auto', 'crisp-edges' */
+}
+

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Imagen con Música</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    body {
+      /* Ponemos el gif como fondo que cubre toda la pantalla */
+      background: url('img/eren2.gif') no-repeat center center fixed;
+      background-size: cover;
+      display: flex;
+      justify-content: center;
+      align-items: flex-end; /* para que el botón quede abajo */
+      height: 100vh;
+      position: relative;
+    }
+
+    #playButton {
+      margin-bottom: 30px;
+      padding: 12px 24px;
+      font-size: 18px;
+      background-color: #1c7ed6;
+      color: white;
+      border: none;
+      border-radius: 12px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="playButton">Oprímeme</button>
+
+  <audio id="bg-music">
+    <source src="song/fin.mp3" type="audio/mpeg" />
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <script>
+    const audio = document.getElementById('bg-music');
+    const playButton = document.getElementById('playButton');
+
+    playButton.addEventListener('click', () => {
+      audio.play();
+    });
+  </script>
+
+</body>
+</html>

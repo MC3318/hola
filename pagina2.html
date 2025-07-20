@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carta en Llamas</title>
+  <link rel="stylesheet" href="css/estilo.css" />
+</head>
+<body>
+
+  <div class="carta">
+    <img src="img/carta.jfif" class="papel" alt="Carta quemada">
+    <img src="img/fire.gif.gif" class="fuego" alt="Fuego animado">
+    <div class="mensaje" id="mensaje-texto"></div>
+  </div>
+
+  <audio id="efecto-fuego" src="Song/sonido-hoja.mp3" preload="auto"></audio>
+
+  <script>
+    const texto = `Hola… No sé si aún quieres volver a hablar conmigo, pero si llegaste hasta aquí, gracias por no ignorarme del todo. A veces pienso que las cosas pasan por algo`;
+
+    const mensaje = document.getElementById('mensaje-texto');
+    const audio = document.getElementById('efecto-fuego');
+
+    let i = 0;
+
+    function escribirTexto() {
+      if (i < texto.length) {
+        mensaje.innerHTML += texto[i] === '\n' ? '<br>' : texto[i];
+        i++;
+        setTimeout(escribirTexto, 50);
+      }
+    }
+
+    window.onload = function () {
+      audio.play();
+      escribirTexto();
+      mensaje.classList.add('mostrar');
+    };
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mundo Shingeki</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: url('img/1.0.jpg') no-repeat center center fixed;
+      background-size: cover;
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Arial', sans-serif;
+    }
+
+    #entrar {
+      margin-top: 50px; /* Ajusta este valor para mover el botón más o menos */
+      padding: 15px 30px;
+      font-size: 15px;
+      background-color: rgba(0, 0, 0, 0.7);
+      color: #f0f0f0;
+      border: 2px solid #f0f0f0;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    #entrar:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      border-color: #ffffff;
+    }
+  </style>
+</head>
+<body>
+  <button id="entrar" onclick="irAPagina1()">Continuar</button>
+
+  <script>
+    function irAPagina1() {
+      window.location.href = "pagina1.html";
+    }
+  </script>
+</body>
+</html>

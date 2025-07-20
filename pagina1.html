@@ -1,0 +1,88 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mundo Shingeky</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #000;
+      background-image: url('img/2.jpg'); /* Asegúrate que el archivo exista */
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      flex-direction: column;
+    }
+
+    .mensaje {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+      max-width: 90%;
+      margin-bottom: 20px;
+    }
+
+    .boton-volumen,
+    #entrar {
+      background-color: #ffcc00;
+      color: #000;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+      transition: background-color 0.3s ease;
+      margin-top: 15px;
+      width: 150px;
+    }
+
+    .boton-volumen:hover,
+    #entrar:hover {
+      background-color: #ffd633;
+    }
+
+    audio {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="mensaje">
+  </div>
+
+  <button class="boton-volumen" onclick="activarMusica()">Dale click, sube el volumen y escucha la canción</button>
+
+ <button id="entrar" onclick="irACarta()">Continuar</button>
+
+
+
+  <audio id="musica" loop>
+    <source src="song/Prueba-song.mp3" type="audio/mp3" />
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <script>
+  function activarMusica() {
+    const audio = document.getElementById('musica');
+    if (audio.paused) {
+      audio.play().catch(() => {
+        alert('Tu navegador bloqueó la reproducción automática. Intenta interactuar con la página.');
+      });
+    }
+  }
+
+  function irACarta() {
+    window.location.href = "carta/carta-llamas-main/segunda-pagina.html";
+  }
+</script>
+
